@@ -6,12 +6,15 @@
   "scripts": {
     "test": "node test | tap-summary",
     "buildSample": "browserify example/index.js -o example/bundle.js",
-    "ci": "node test | tap-summary --no-progress"
+    "ci": "node test | tap-summary --no-progress",
+    "prepare": "yarn run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "author": "kumavis",
   "license": "DBAD",
   "dependencies": {
-    "fast-levenshtein": "^2.0.6"
+    "fast-levenshtein": "^2.0.6",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "async": "^2.5.0",
@@ -32,5 +35,6 @@
   "bugs": {
     "url": "https://github.com/MetaMask/eth-phishing-detect/issues"
   },
-  "homepage": "https://github.com/MetaMask/eth-phishing-detect#readme"
+  "homepage": "https://github.com/MetaMask/eth-phishing-detect#readme",
+  "snyk": true
 }
